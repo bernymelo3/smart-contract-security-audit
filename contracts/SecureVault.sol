@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/security/Pausable.sol";
+import "@openzeppelin/contracts/utils/Pausable.sol";
 
 /**
  * @title SecureVault
@@ -19,7 +19,7 @@ contract SecureVault is ReentrancyGuard, Ownable, Pausable {
     event EmergencyWithdraw(address indexed owner, uint256 amount);
     event ExternalCallExecuted(address indexed target, bool success);
     
-    constructor() {
+    constructor() Ownable(msg.sender) Pausable() {
         // Initializes the Ownable contract, setting deployer as owner
     }
     

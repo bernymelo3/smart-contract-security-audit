@@ -16,6 +16,8 @@ A comprehensive educational project demonstrating common smart contract security
 - [Security Concepts Demonstrated](#-security-concepts-demonstrated)
 - [Repository Structure](#-repository-structure)
 - [Getting Started](#-getting-started)
+- [Test Coverage](#-test-coverage)
+- [Linting](#-linting)
 - [Vulnerabilities Covered](#-vulnerabilities-covered)
 - [Secure Implementation Patterns](#-secure-implementation-patterns)
 - [License](#-license)
@@ -91,6 +93,51 @@ SmartContractAudit/
    npx hardhat test
    ```
 
+4. Check code coverage:
+   ```bash
+   npx hardhat coverage
+   ```
+
+5. Run code linting:
+   ```bash
+   npm run lint
+   ```
+
+## 📊 Test Coverage
+
+The current test coverage of the project is:
+
+| File | % Statements | % Branch | % Functions | % Lines | Uncovered Lines |
+|------|--------------|----------|------------|---------|-----------------|
+| All files | 55.41 | 40 | 62.86 | 57.73 | |
+| contracts/ | 55.41 | 40 | 62.86 | 57.73 | |
+| SecureToken.sol | 41.18 | 27.5 | 60 | 40 | Various |
+| SecureVault.sol | 95 | 64.29 | 90 | 95.65 | 87 |
+| VulnerableToken.sol | 20 | 0 | 44.44 | 42.31 | Various |
+| VulnerableVault.sol | 60 | 37.5 | 50 | 69.23 | 49,50,56,61 |
+
+The tests are designed to demonstrate both vulnerabilities in the vulnerable contracts and the security features in the secure contracts. All 17 tests are currently passing.
+
+## 🧹 Linting
+
+The project uses Solhint for linting Solidity contracts. The linter configuration is in `.solhint.json` and includes:
+
+- Enforcing Solidity compiler version compatibility
+- Function visibility best practices
+- Maximum line length recommendations
+- Various other code quality rules
+
+To run the linter:
+
+```bash
+npm run lint
+```
+
+Current linting highlights several areas for improvement:
+- Converting global imports to named imports
+- Implementing custom errors for gas efficiency
+- Optimizing error message length
+
 ## 🚨 Vulnerabilities Covered
 
 ### VulnerableToken Issues
@@ -122,6 +169,9 @@ The secure contracts demonstrate:
 - **Input Validation** - Thorough parameter checking
 - **Event Emissions** - Comprehensive logging of state changes
 - **Gas Efficiency** - Bounded operations and efficient storage
+- **Custom Errors** - Gas optimized error handling
+- **Reentrancy Guards** - Protection against reentrant calls
+- **Pausable Functionality** - Circuit breaker pattern for emergencies
 
 ## 📝 License
 

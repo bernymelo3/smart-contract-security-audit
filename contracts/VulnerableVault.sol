@@ -57,7 +57,7 @@ contract VulnerableVault {
     }
     
     // VULNERABILITY 6: Function visibility not explicitly declared
-    function getContractBalance() view returns (uint256) {
+    function getContractBalance() public view returns (uint256) {
         return address(this).balance;
     }
 } 
