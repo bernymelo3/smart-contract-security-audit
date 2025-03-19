@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "clean": "hardhat clean",
+    "lint": "solhint 'contracts/**/*.sol'",
+    "prettier": "prettier --write 'contracts/**/*.sol' 'test/**/*.ts'",
+    "coverage": "hardhat coverage",
+    "typechain": "hardhat typechain"
   },
   "keywords": [],
   "author": "",
