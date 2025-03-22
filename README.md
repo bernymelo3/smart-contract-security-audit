@@ -6,10 +6,6 @@
 
 A comprehensive educational project demonstrating common smart contract security vulnerabilities and their fixes. This repository contains vulnerable contracts with intentional security flaws, secure counterparts, detailed audit reports, and best practices documentation.
 
-<p align="center">
-  <img src="https://i.imgur.com/cLU5A3F.png" alt="Security Concept" width="600">
-</p>
-
 ## 📋 Table of Contents
 
 - [Project Overview](#-project-overview)
@@ -79,7 +75,7 @@ SmartContractAudit/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/smart-contract-audit.git
+   git clone https://github.com/bernymelo3/smart-contract-audit.git
    cd smart-contract-audit
    ```
 
